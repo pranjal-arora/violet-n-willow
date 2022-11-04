@@ -1,0 +1,19 @@
+{
+  "name": "se-project-violet-n-willow",
+  "version": "1.0.0",
+  "description": "E-commerce website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjal-arora/SE-project-Violet-n-Willow.git"
+  },
+  "author": "Pranjal Arora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow/issues"
+  },
+  "homepage": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow#readme"
+}
