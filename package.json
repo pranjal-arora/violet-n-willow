@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow/issues"
   },
-  "homepage": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow#readme"
+  "homepage": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1",
+    "uuid": "^9.0.0"
+  }
 }
