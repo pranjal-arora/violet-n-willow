@@ -15,7 +15,6 @@
   "bugs": {
     "url": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow/issues"
   },
-  
   "homepage": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
