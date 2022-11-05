@@ -18,14 +18,21 @@
   "homepage": "https://github.com/pranjal-arora/SE-project-Violet-n-Willow#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cloudinary": "^1.32.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
     "express-validator": "^6.14.2",
     "https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.1",
-    "uuid": "^9.0.0"
+    "nodemailer": "^6.8.0",
+    "paytmchecksum": "^1.5.0",
+    "stripe": "^10.16.0",
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0"
   }
 }
