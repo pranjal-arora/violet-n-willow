@@ -7,7 +7,8 @@ const addressSchema = mongoose.Schema({
   },
   name: {
     type: String,
-    required: true,  },
+    required: true,
+  },
   number: {
     type: Number,
     required: true,
@@ -15,14 +16,16 @@ const addressSchema = mongoose.Schema({
   pincode: {
     type: Number,
     required: true,
-  },  locality: {
+  },
+  locality: {
     type: String,
     required: true,
   },
   houseAddress: {
     type: String,
     required: true,
-  },  city: {
+  },
+  city: {
     type: String,
     required: true,
   },
@@ -33,7 +36,8 @@ const addressSchema = mongoose.Schema({
   addressType: {
     type: String,
     required: true,
-  },  landmark: {
+  },
+  landmark: {
     type: String,
   },
   alternateNumber: {

@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import { isMobile, isDesktop, isTablet, deviceType,    } from 'react-device-detect';
+//Custom import
+import Header from "./components/header/Header";
+import HomePage from "./pages/HomePage";
 
-function App() {
+//css
+import "./App.css";
+
+
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {isDesktop ? (
+        <>
+          <Header />
+          
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+        </>
+      ) : (
+        <div className="container">
+          <img className="img" src="/monitors-laptop.png" alt="Mobile Laptop" />
+          <div className="text-container">
+            <h2 className="heading">Please use Laptop or desktop</h2>
+            <p className="para">
+              We don't support small screen yet. Please use laptop or desktop for the
+              best experience.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
