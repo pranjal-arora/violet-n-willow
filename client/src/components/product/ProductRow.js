@@ -11,7 +11,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import { useEffect } from "react";
-//import { getProductsByCategory } from "../../actions/productActions";
+import { getProductsByCategory } from "../../actions/productActions";
 
 import "../../styles/ProductRow.css";
 
@@ -69,7 +69,10 @@ const useStyles = makeStyles({
 
 function ProductRow({ isFirstRow = false, categoryName, title }) {
   useEffect(() => {
-   
+    getProductsByCategory(categoryName).then((data) => {
+      setLoadedProducts(data);
+      setIsLoading(false);
+    });
   }, [categoryName]);
 
   const [loadedProducts, setLoadedProducts] = useState([]);
@@ -115,7 +118,7 @@ function ProductRow({ isFirstRow = false, categoryName, title }) {
         <Box className={classes.leftContainer}>
           <h2 className={classes.row_title}>{title}</h2>
           <Button
-            style={{ backgroundColor: "#b0b4fc", marginTop: 20 }}
+            style={{ backgroundColor: "#2874f0", marginTop: 20 }}
             variant="contained"
             color="primary"
           >
@@ -124,7 +127,7 @@ function ProductRow({ isFirstRow = false, categoryName, title }) {
         </Box>
         <Box className={classes.products_wrapper} textAlign="center">
           {isLoading ? (
-            <CircularProgress style={{ color: "#b0b4fc" }} />
+            <CircularProgress style={{ color: "#2874f0" }} />
           ) : (
             <Carousel
               swipeable={true}

@@ -17,7 +17,7 @@ import ListMenu from "./ListMenu";
 
 const useStyle = makeStyles((theme) => ({
   header: {
-    backgroundColor: "#b0b4fc",
+    backgroundColor: "#2874f0",
     height: 60,
     paddingLeft: "10%",
     lineHeight: 0,
@@ -93,10 +93,22 @@ function Header() {
               {/* logo */}
               <img
                 className={classes.header_logo}
-                src="./logo.jpeg"
-                alt="Violet&Willow"
+                src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png"
+                alt="Flipkart"
               />
-              
+              {/* Explore plus part  */}
+              <Box className={classes.header_container}>
+                <Typography className={classes.header_subtitle}>
+                  <Link to="/plus">
+                    Explore <span style={{ color: "#ffe500" }}>Plus</span>
+                  </Link>
+                </Typography>
+                <img
+                  className={classes.header_icon}
+                  src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png"
+                  alt=""
+                />
+              </Box>
             </Box>
           </Link>
           <SearchBar />

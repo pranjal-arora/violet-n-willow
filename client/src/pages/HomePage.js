@@ -3,14 +3,14 @@ import React from "react";
 import { Box, makeStyles } from "@material-ui/core";
 
 import Navbar from "../components/Navbar";
-//import HomeBanner from "../components/header/HomeBanner";
+import HomeBanner from "../components/header/HomeBanner";
 import PosterRow from "../components/PosterRow";
-//import FeaturedBrandsRow from "../components/FeaturedBrandsRow";
+import FeaturedBrandsRow from "../components/FeaturedBrandsRow";
 import ProductRow from "../components/product/ProductRow";
-//import Footer from "../components/footer/Footer";
+import Footer from "../components/footer/Footer";
 
 
-//import { featuredBrandLinks, posterLinks, sidePosterLink  } from "../constants/data";
+import { featuredBrandLinks, posterLinks, sidePosterLink  } from "../constants/data";
 
 import "../styles/HomePage.css";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -26,7 +26,7 @@ function HomePage() {
   return (
     <Box className={classes.homePage}>
       <Navbar />
-      
+      <HomeBanner />
       <div className="first_productRow">
         <ProductRow
           isFirstRow={true}
@@ -46,22 +46,36 @@ function HomePage() {
         imgUrls={posterLinks.links1}
       /> */}
       <PosterRow
-        
+        imgUrls={posterLinks.links2}
       />
       <ProductRow
         title="Top Deals"
         categoryName="top deals"
         subTitle="Daily crazy deals"
       />
-      
-      <ProductRow title="Trousers" categoryName="trousers" />
-      
-      <ProductRow title="Sweaters" categoryName="sweaters" />
-     
-      <ProductRow title="T-shirts" categoryName="tshirt" />
-          
-      <ProductRow title="Tops and Tunics" categoryName="topstunics" />
-
+      <PosterRow
+        imgUrls={posterLinks.links3}
+      />
+      <ProductRow title="Mobiles" categoryName="mobile" />
+      <PosterRow
+        imgUrls={posterLinks.links4}
+      />
+      <FeaturedBrandsRow
+        brandsUrls={featuredBrandLinks.links1}
+      />
+      <ProductRow title="Electronics" categoryName="electronic" />
+      <PosterRow
+        imgUrls={posterLinks.links5}
+      />
+      <ProductRow title="Appliances" categoryName="appliances" />
+      <PosterRow
+        imgUrls={posterLinks.links6}
+      />
+      <FeaturedBrandsRow
+        brandsUrls={featuredBrandLinks.links2}
+      />
+      <ProductRow title="Furniture" categoryName="furniture" />
+      <Footer/>
     </Box>
   );
 }

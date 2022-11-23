@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, makeStyles } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
-//import { bannerData, horizontalPosterLink } from "../../constants/data";
+import { bannerData, horizontalPosterLink } from "../../constants/data";
 
 const useStyle = makeStyles({
   banner: {

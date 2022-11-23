@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-//import axios from "../../adapters/axios";
+import axios from "../../adapters/axios";
 import {
   Button,
   makeStyles,
@@ -14,19 +14,19 @@ import { useDispatch, useSelector } from "react-redux";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-//import {
-//   modalClose,
-//   modalOpen,
-//   setIsAuthenticate,
-//   setPopupLogin,
-//   setUserInfo,
-// } from "../../actions/userActions";
-//import authentication from "../../adapters/authentication";
-//import toastMessage from "../../utils/toastMessage";
+import {
+  modalClose,
+  modalOpen,
+  setIsAuthenticate,
+  setPopupLogin,
+  setUserInfo,
+} from "../../actions/userActions";
+import authentication from "../../adapters/authentication";
+import toastMessage from "../../utils/toastMessage";
 
-//import AuthPage from "../../pages/AuthPage";
+import AuthPage from "../../pages/AuthPage";
 import ProfileMenu from "./ProfileMenu";
-//import { clearCart } from "../../actions/cartActions";
+import { clearCart } from "../../actions/cartActions";
 
 const useStyles = makeStyles((theme) => ({
   headerMenu: {

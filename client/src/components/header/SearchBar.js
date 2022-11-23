@@ -12,8 +12,8 @@ import {
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 
-// import { getProducts } from "../../actions/productActions";
-// import { makeShortText } from "../../utils/makeShortText";
+import { getProducts } from "../../actions/productActions";
+import { makeShortText } from "../../utils/makeShortText";
 
 const useStyles = makeStyles((theme) => ({
   search: {
