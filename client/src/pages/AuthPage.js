@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
@@ -25,7 +25,7 @@ function AuthPage({ popup = false }) {
   const [isOpen, setIsOpen] = useState(true);
   const { isLogin } = useSelector((state) => state.userReducer);
   const { isAuthenticate } = useSelector((state) => state.userReducer);
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const classes = useStyles();
 
@@ -37,7 +37,7 @@ function AuthPage({ popup = false }) {
           dispatch(setIsAuthenticate(res.isAuth));
           dispatch(setUserInfo(res.user));
           setIsOpen(false);
-          history.push("/");
+          navigate("/");
         })
         .catch((err) => {
           setIsOpen(false);

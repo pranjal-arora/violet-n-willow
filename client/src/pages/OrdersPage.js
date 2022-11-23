@@ -9,7 +9,7 @@ import OrderRow from "../components/product/OrderRow";
 import LoaderSpinner from "../components/LoaderSpinner";
 
 import { noOrdersUrl } from "../constants/data";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
   component: {
@@ -71,11 +71,11 @@ function OrdersPage() {
   const [isLoading, setIsLoading] = useState(true);
   const { orderDetails } = useSelector((state) => state.orderReducer);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isAuthenticate) {
-      history.replace("/login?ref=orders");
+      navigate("/login?ref=orders", { replace: true });
     }
     dispatch(getOrderDetails());
     setTimeout(() => {

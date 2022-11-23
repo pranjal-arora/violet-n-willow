@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "../../adapters/axios";
 import OtpInput from "react-otp-input";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/styles";
 import { Button, CircularProgress, Link } from "@material-ui/core";
@@ -36,7 +36,7 @@ function OTPVerify({
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = useQuery();
 
   useEffect(() => {
@@ -93,9 +93,9 @@ function OTPVerify({
 
       if (query.get("ref")) {
         let routeString = query.get("ref");
-        history.replace(`/${routeString}`);
+        navigate(`/${routeString}`, { replace: true });
       } else {
-        history.replace("/");
+        navigate("/", { replace: true });
       }
     } catch (error) {
       setLoading(false);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   makeStyles,
@@ -167,13 +167,13 @@ const CheckoutPage = () => {
   );
   const dispatch = useDispatch();
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = useQuery();
 
   useEffect(() => {
     //check if request from cart page or not
     if (query.get("init") != "true") {
-      history.replace("/cart");
+      navigate("/cart", { replace: true });
     }
 
     if (isAuthenticate) {
@@ -183,7 +183,7 @@ const CheckoutPage = () => {
         setIsLoading(false);
       }, 500);
     } else {
-      history.replace("/login?ref=checkout?init=true");
+      navigate("/login?ref=checkout?init=true", { replace: true });
     }
   }, [isAuthenticate]);
 
@@ -397,7 +397,7 @@ const CheckoutPage = () => {
               <Box
                 className={clsx(classes.addressComponent, classes.addBtn)}
                 onClick={() =>
-                  history.replace("/account/addresses?ref=checkout?init=true")
+                  navigate("/account/addresses?ref=checkout?init=true", { replace: true })
                 }
               >
                 <AddIcon style={{ marginRight: 10 }} />

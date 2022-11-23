@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { isMobile, isDesktop, isTablet, deviceType,    } from 'react-device-detect';
 //Custom import
 import Header from "./components/header/Header";
@@ -25,42 +25,42 @@ function App() {
       {isDesktop ? (
         <>
           <Header />
-          <Switch>
-            <Route exact path="/">
+          <Routes>
+            <Route path='/'>
               <HomePage />
             </Route>
-            <Route exact path="/login">
+            <Route path='/login'>
               <AuthPage />
             </Route>
-            <Route exact path="/cart">
+            <Route path='/cart'>
               <CartPage />
             </Route>
-            <Route exact path="/account">
+            <Route path='/account'>
               <MyAccountsPage />
             </Route>
-            <Route exact path="/wishlist">
+            <Route path='/wishlist'>
               <MyAccountsPage />
             </Route>
-            <Route exact path="/account/addresses">
+            <Route path='/account/addresses'>
               <MyAccountsPage />
             </Route>
-            <Route exact path="/orders">
+            <Route path='/orders'>
               <OrdersPage />
             </Route>
-            <Route exact path="/checkout">
+            <Route path='/checkout'>
               <CheckoutPage />
             </Route>
-            <Route exact path="/product/:id">
+            <Route path='/product/:id'>
               <ProductPage />
             </Route>
-            <Route exact path="/order-failed">
+            <Route path='/order-failed'>
               <OrderFailedPage />
             </Route>
-            <Route exact path="/order-success">
+            <Route path='/order-success'>
               <OrderSuccessPage />
             </Route>
-            <Route component={ErrorPage} />
-          </Switch>
+            <Route element={<ErrorPage/>} />
+          </Routes>
         </>
       ) : (
         <div className="container">

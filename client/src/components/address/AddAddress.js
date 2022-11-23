@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "../../adapters/axios";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   Box,
@@ -84,7 +84,7 @@ function AddAddress() {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = useQuery();
 
   const handleDropDown = (event) => {
@@ -119,7 +119,7 @@ function AddAddress() {
       //If request Come from checkout
       if (query.get("ref")) {
         let routeString = query.get("ref");
-        history.push(`/${routeString}`);
+        navigate(`/${routeString}`);
       }
     } catch (error) {
       toastMessage("Something went wrong", "error");
@@ -219,8 +219,8 @@ function AddAddress() {
             variant="outlined"
             required
             name="yourState"
-            value={values.yourState}
-            onChange={handleInputs}
+            valuex={values.yourState}
+            onChangex={handleInputs}
           >
             {indianStates.map((option) => (
               <option key={option.value} value={option.value}>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";

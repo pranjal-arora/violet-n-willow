@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "../../adapters/axios";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -104,7 +104,7 @@ function Login() {
 
   const classes = useStyles();
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = useQuery();
 
   const { popupLogin } = useSelector((state) => state.userReducer);
@@ -202,9 +202,9 @@ function Login() {
 
         if (query.get("ref")) {
           let routeString = query.get("ref");
-          history.replace(`/${routeString}`);
+          navigate(`/${routeString}`, { replace: true });
         } else {
-          history.replace("/");
+          navigate('/', { replace: true });
         }
       }
     } catch (error) {

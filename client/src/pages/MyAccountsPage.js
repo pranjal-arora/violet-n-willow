@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid, makeStyles } from "@material-ui/core";
-import { Route, Switch, useHistory } from "react-router";
+import { Route, Routes, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 
 import Wishlist from "../components/wishlist/Wishlist";
@@ -30,10 +30,10 @@ function MyAccountsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   const { isAuthenticate } = useSelector((state) => state.userReducer);
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => {
     if (!isAuthenticate) {
-      history.replace("/login?ref=account");
+      navigate("/login?ref=account", { replace: true });
     }
     setIsLoading(false);
   }, [isAuthenticate]);
@@ -53,20 +53,20 @@ function MyAccountsPage() {
           <Sidebar />
         </Grid>
         <Grid style={{ background: "#fff" }} item lg={9} md={9} sm={12} xs={12}>
-          <Switch>
-            <Route exact path="/account">
+          <Routes>
+            <Route path='/account'>
               <PersonalInfo />
             </Route>
-            <Route exact path="/wishlist">
+            <Route path='/wishlist'>
               <Wishlist />
             </Route>
-            <Route exact path="/account/addresses">
+            <Route  path='/account/addresses'>
               <ManageAddresses />
             </Route>
             <Route>
               <PersonalInfo />
             </Route>
-          </Switch>
+          </Routes>
         </Grid>
       </Grid>
       <ToastMessageContainer />

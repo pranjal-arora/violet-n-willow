@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import clsx from "clsx";
@@ -74,7 +74,7 @@ const useStyle = makeStyles((theme) => ({
 const ProductImageSlider = ({ product }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const classes = useStyle();
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { wishlistItems } = useSelector((state) => state.wishlistReducer);
   const { isAuthenticate } = useSelector((state) => state.userReducer);
@@ -94,7 +94,7 @@ const ProductImageSlider = ({ product }) => {
 
   const addItemToCart = () => {
     dispatch(addToCart(product));
-    history.push("/cart");
+    navigate("/cart");
   };
 
   const handleWishlist = () => {

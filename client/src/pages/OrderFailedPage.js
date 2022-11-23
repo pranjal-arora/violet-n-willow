@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function OrderFailedPage() {
   useEffect(() => {
     setTimeout(() => {
-      history.replace("/");
+      navigate("/", { replace: true });
     }, 30000);
   }, []);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
       <div
