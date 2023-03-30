@@ -1,3 +1,4 @@
+
 # Violet-n-Willow
 
 
@@ -22,9 +23,32 @@ Since most people prefer to shop online due to the paucity of time, business own
 
 
 ### Layout:-
+**Hero Section:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/herosection.png?raw=true)
+
+**Sign Up/ Sign In:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/signup.png?raw=true)
+
+**Products:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/categories.png?raw=true)
+
+**Checkout:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/checkout.png?raw=true)
+
+**My Orders:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/myorders.jpg?raw=true)
+
+**Forget Password:**
+
+![Request](https://github.com/pranjal-arora/violet-n-willow/blob/master/layout/passwordreset.png?raw=true)
 
 
-### Error Handling, after mentor discussions:-
+### Error Handling added, after mentor discussions:-
 - Error Page on accessing any protected route.
 - For Checkout, always need to be signed in.
 - Payment Options available only when valid billing address is entered
@@ -32,5 +56,3 @@ Since most people prefer to shop online due to the paucity of time, business own
 ### Third Party API's used:-
 - ***Stripe Payment Gateway-*** to process the customer's credit card information by sending the data to the gateway's web server, which then makes the sale and sends the confirmation back to the website.
 - ***SendGrid Email Verification-*** to validate and verify user's Email. The SendGrid UI creates the Email Validation API Key. 
-
-
